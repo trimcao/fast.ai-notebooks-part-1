@@ -86,7 +86,7 @@ class Vgg16():
         model.add(Dense(num, activation='softmax'))
         self.compile()
 
-    def finetune(self):
+    def finetune(self, batches):
         self.ft(batches.num_class)
         classes = list(iter(batches.class_indices))
         for c in batches.class_indices:
